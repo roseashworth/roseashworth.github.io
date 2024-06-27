@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Maps</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">My Portfolio</a> by Rose Ashworth</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Menu</a>
+								<ul>
+									<li><a href="contact.html">About Me</a></li>
+									<li>
+										<a href="#">Maps</a>
+										<ul>
+											<li><a href="choropleth.html">Choropleth</a></li>
+											<li><a href="vector.html">Vector</a></li>
+											<li><a href="lcc.html">Landcover Classification</a></li>
+											<li><a href="rem.html">REM</a></li>
+											<li><a href="carbon.html">Carbon Sequestration</a></li>
+											<li><a href="lidar.html">LiDAR</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Releative Elevation Model (REM)</h2>
+						<p>Using open data from Utrecht City and GeoTiles to create an REM of the river, Maas, through Roermond</p>
+					</header>
+					<div class="box">
+						<span class="image fit"><img src="images/rem.jpg" style="border: 2px solid #ccc;"/></span>
+						<h3>What is a relative elevation model?</h3>
+						<p>text </p>
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								
+								<h3>How did I make this map?</h3>
+								<p>text</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Obstacles encounters and skills I learnt as a result:</h3>
+								<ul>
+									<li><strong>Choosing data: </strong>when I was choosing the data for my choropleth map, I had trouble often finding a complete data set. When I looked at the UN Stat Data online, some countries did not submit their data for certain indicators and when they did, it was usually for the year 2019 and no earlier or later. This made it quite difficult to create a choropleth map because then you could not see values for any country and they could be falsely read as 0 for a value when in fact it was just missing. I overcame this by learning how to go into the attribute tables and reading/understanding the data and cleaning it up.</li>
+									<li><strong>Data joining: </strong>joining the data layers was difficult because some information was missing and I needed to join the right target and join fields in order for the data layers to appropriately join. After trial and error, I learnt how to join the right fields (in the end it was the ISO_A3 fields). </li>
+									<li><strong>Uploading maps to Esri-Online </strong> I learnt how to export the layer as a feature layer which I then uploaded onto Esri online.</li>
+									<li><strong>Making a web app:</strong> I learnt how to make a slider map using the web app function in Esri Online. It was challenging at first because I thought the slider map would allow me to slide between the two maps (as in, have it trail and overlay each other). But after finding out that was not what I planned to do, I experimented with other web apps until I found "Media Map".</li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

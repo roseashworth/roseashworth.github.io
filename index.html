@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rosie's GIS Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index.html">My Portfolio</a> by Rose Ashworth</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Menu</a>
+								<ul>
+									<li><a href="contact.html">About Me</a></li>
+									<li>
+										<a href="#">Maps</a>
+										<ul>
+											<li><a href="choropleth.html">Choropleth</a></li>
+											<li><a href="vector.html">Vector</a></li>
+											<li><a href="lcc.html">Landcover Classification</a></li>
+											<li><a href="rem.html">REM</a></li>
+											<li><a href="carbon.html">Carbon Sequestration</a></li>
+											<li><a href="lidar.html">LiDAR</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Rosie's GIS Portfolio</h2>
+														</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>Introducing GIS</h2>
+							<p>GIS (geographic information system) is a system which systematically analyses and visualises data. It can be used in many ways, for instance: urban/city planning, visualising SDG indicators (which can also include environment management or analysis/monitoring of vegetation), land classification, spatial recognition. Throughout this course, we have experimented with various softwares: Esri Online, ArcGIS Pro, QGIS, and Google Earth Engine Editor.  </p>
+						</header>
+					</section>
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+			<!-- Slideshow -->
+				<style>
+				* {box-sizing: border-box}
+				body {font-family: "Source Sans Pro", sans-serif; font-size: 16pt; margin:0}
+				.mySlides {display: none}
+				img {vertical-align: middle;}
+
+				/* Slideshow container */
+				.slideshow-container {
+				  max-width: 800px;
+				  position: relative;
+				  margin: auto;
+				}
+
+				/* Next & previous buttons */
+				.prev, .next {
+				  cursor: pointer;
+				  position: absolute;
+				  top: 50%;
+				  width: auto;
+				  padding: 16px;
+				  margin-top: -22px;
+				  color: white;
+				  font-weight: bold;
+				  font-size: 18px;
+				  transition: 0.6s ease;
+				  border-radius: 0 3px 3px 0;
+				  user-select: none;
+				}
+
+				.text {
+				        color: black;
+		                font-size: 16px;
+		                padding: 8px 12px;
+		                position: absolute;
+		                bottom: 8px;
+		                max-width: 300px; /* Maximum width of the box */
+		                left: 50%; /* Center the box horizontally */
+		                transform: translateX(-50%); /* Centering method */
+		                text-align: center;
+		                background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+		                border: 1px solid #ccc; /* Border style */
+		                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for depth */
+		                border-radius: 5px; /* Optional: Rounded corners */
+		                word-wrap: break-word; /* Allows long words to wrap */
+				    }
+
+				/* Position the "next button" to the right */
+				.next {
+				  right: 0;
+				  border-radius: 3px 0 0 3px;
+				}
+
+				/* On hover, add a black background color with a little bit see-through */
+				.prev:hover, .next:hover {
+				  background-color: rgba(0,0,0,0.8);
+				}
+
+				/* Caption text */
+				.text {
+				  color: #black;
+				  font-size: 16px;
+				  padding: 8px 12px;
+				  position: absolute;
+				  bottom: 8px;
+				  width: 100%;
+				  text-align: center;
+				}
+
+				/* Number text (1/7 etc) */
+				.numbertext {
+				  color: #black;
+				  font-size: 16px;
+				  padding: 8px 12px;
+				  position: absolute;
+				  top: 0;
+				}
+
+				/* The dots/bullets/indicators */
+				.dot {
+				  cursor: pointer;
+				  height: 15px;
+				  width: 15px;
+				  margin: 0 2px;
+				  background-color: #bbb;
+				  border-radius: 50%;
+				  display: inline-block;
+				  transition: background-color 0.6s ease;
+				}
+
+				.active, .dot:hover {
+				  background-color: #717171;
+				}
+
+				/* Fading animation */
+				.fade {
+				  animation-name: fade;
+				  animation-duration: 1.5s;
+				}
+
+				@keyframes fade {
+				  from {opacity: .4} 
+				  to {opacity: 1}
+				}
+
+				/* On smaller screens, decrease text size */
+				@media only screen and (max-width: 300px) {
+				  .prev, .next,.text {font-size: 11px}
+				}
+				</style>
+				</head>
+				<body>
+
+				<div class="slideshow-container">
+
+				<div class="mySlides fade">
+				  <div class="numbertext">1 / 6</div>
+				  <img src="images/choro1.jpg" style="width:100%">
+				  <div class="text">Choropleth map of SDG indicator 15.1.1</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">2 / 6</div>
+				  <img src="images/trees.jpg" style="width:100%">
+				  <div class="text">Kernel Density map of all trees in Utrecht</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">3 / 6</div>
+				  <img src="images/trees2.jpg" style="width:100%">
+				  <div class="text">Supervised pixel based map of land cover classification in Utrecht</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">4 / 6</div>
+				  <img src="images/rem.jpg" style="width:100%">
+				  <div class="text">REM of the river, Maas, through Roermond</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">5 / 6</div>
+				  <img src="images/bali.jpg" style="width:100%">
+				  <div class="text">Map showing GPP/ha/year in Bali using Google Earth Engine</div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">6 / 6</div>
+				  <img src="images/lidar.jpg" style="width:100%">
+				  <div class="text">3D map of Lombok, Utrecht using LiDAR data</div>
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">❮</a>
+				<a class="next" onclick="plusSlides(1)">❯</a>
+
+				</div>
+				<br>
+
+				<div style="text-align:center">
+				  <span class="dot" onclick="currentSlide(1)"></span> 
+				  <span class="dot" onclick="currentSlide(2)"></span> 
+				  <span class="dot" onclick="currentSlide(3)"></span> 
+				  <span class="dot" onclick="currentSlide(4)"></span> 
+				  <span class="dot" onclick="currentSlide(5)"></span>
+				  <span class="dot" onclick="currentSlide(6)"></span>  
+				</div>
+
+				<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  let i;
+				  let slides = document.getElementsByClassName("mySlides");
+				  let dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}    
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+				    slides[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots.length; i++) {
+				    dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				}
+				</script>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Rosie'sGISPortfolio2024.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

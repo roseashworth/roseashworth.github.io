@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Maps</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">My Portfolio</a> by Rose Ashworth</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Menu</a>
+								<ul>
+									<li><a href="contact.html">About Me</a></li>
+									<li>
+										<a href="#">Maps</a>
+										<ul>
+											<li><a href="choropleth.html">Choropleth</a></li>
+											<li><a href="vector.html">Vector</a></li>
+											<li><a href="lcc.html">Landcover Classification</a></li>
+											<li><a href="rem.html">REM</a></li>
+											<li><a href="carbon.html">Carbon Sequestration</a></li>
+											<li><a href="lidar.html">LiDAR</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Vector analysis of trees in Utrecht map</h2>
+						<p>Using data from Gemeente Utrecht to identify and analyse trees across Utrecht.</p>
+					</header>
+					<div class="box">
+						<a href="#" class="image fit">
+							<iframe position= center; width="100%" height="500px" style="border:1" src="https://experience.arcgis.com/experience/adae061d2b1a4186bb3ecf44235e8102/" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen>allowfullscreen>iFrames are not supported on this page.</iframe>
+						</a>
+						<h3>What does this map tell us?</h3>
+						<p>This map essentially visualises all of the trees in Utrecht, sourced from open data from Geemente Utrecht. There are several layers, each visualing their own set of data: 
+							<br>
+						<ul>
+							<li><strong>AmerikaanseEikOnly: </strong>This layer only highlights Northern Red Oak trees in Utrecht</li>
+							<li><strong>CP_Wijken_SummarizeWithin: </strong>This layer is a choropleth map representing the amount of trees in different districts in Utrecht based on CP (count of points - where points are trees). </li>
+							<li><strong>RA_Wijken_SummarizeWithin: </strong> This layer is another choropleth map representing the amount of trees in different districhts in Utrecht based on RA (rate of area). </li>
+							<li><strong>Grenzen Utrecht - Wijken:</strong> This layer shows the different districts, neighbourhoods, and areas in Utrecht.</li>
+						</ul></p>
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								
+								<h3>How did I make this map?</h3>
+								<p>To create this map, I used ArcGIS online data to obtain data about trees ("Bomenkaart"), the Municipalities provinces ("Gemeenten Provincie Utrecht"), and the boundaries ("Grenzen Utrecht"). After obtaining these data sets, I created a layer highlighting just my trees (Amerikaanse Eik/Northern American Red Oak). Then, I analysed the Wijken layer to count all of the trees in each district based on their count of points and I also analysed the same layer to calculate the rate area. After I created both of these layers, I created two choropleth maps based on the respective attributes. Finally, I used the "Kernel Density" tool in ArcGIS Pro to visualise the densities of all trees in Utrecht (shown in Green) and of Amerikaanse Eik as well (shown in Purple).
+							</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Skills I learnt as a result:</h3>
+								<ul>
+									<li><strong>Using geoprocessing tools: </strong> I obtained a proficiency in using certain geoprocessing tools to export features, calculate rate area, calculate fields, etc. All of these skills helped me analyse the point data that was obtained from Gemeente Utrecht to create these maps.</li>
+									<li><strong>Using ArcGIS: </strong>for this assignment, we switched to using ArcGIS instead of QGIS.</li>
+									<li><strong>Uploading maps to Esri-Online </strong> I learnt how to export the entire map (with its respective layers) onto Esri-Online and how to make an interactive app in which people can hide and show different layers with a clear legend.</li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Rosie'sGISPortfolio2024.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
