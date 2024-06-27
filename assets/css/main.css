@@ -156,10 +156,15 @@
 			text-decoration: none;
 		}
 
+	.parent{
+		display: flex;
+    	justify-content: center; /* Centers horizontally */
+    	align-items: center; /* Centers vertically */
+	}
 	h2 {
 		font-size: 2.25em;
 		line-height: 1.5em;
-		letter-spacing: -0.035em;
+		letter-spacing: -0.035em;	
 	}
 
 	h3 {
@@ -3852,3 +3857,99 @@ iframe {
 			}
 
 	}
+
+/* Slideshow */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: black;
+    font-size: 16px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    max-width: 300px; /* Maximum width of the box */
+    left: 50%; /* Center the box horizontally */
+    transform: translateX(-50%); /* Centering method */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+    border: 1px solid #ccc; /* Border style */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for depth */
+    border-radius: 5px; /* Optional: Rounded corners */
+    word-wrap: break-word; /* Allows long words to wrap */
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
