@@ -52,20 +52,118 @@
 					<div class="box">
 						<span class="image fit"><img src="images/rem.jpg" style="border: 2px solid #ccc;"/></span>
 						<h3>What is a relative elevation model?</h3>
-						<p>text </p>
+						<p>A <strong>relative elevation model</strong> is a model which shows the elevation of an area (usually of a fluvial plane) in relation to the river (or what used to be the river). It can be useful to understand how the land has changed over time due to the path/course of the river.</p>
 						<div class="row">
 							<div class="row-6 row-12-mobilep">
 								
 								<h3>How did I make this map?</h3>
-								<p>text</p>
+								    <style>
+								        .hover-text {
+								            position: relative;
+								            display: inline-block;
+								            cursor: pointer;
+								            color: #E89980
+								        }
+
+								        .hover-text .hover-box {
+								            visibility: hidden;
+					                        width: 445px;
+					                        background-color: #E89980;
+					                        color: #fff;
+					                        text-align: center;
+					                        border-radius: 5px;
+					                        padding: 10px;
+					                        position: absolute;
+					                        z-index: 1;
+					                        bottom: 125%; /* Position the box above the text */
+					                        left: 50%;
+					                        transform: translateX(-50%);
+					                        opacity: 0;
+					                        transition: opacity 0.3s;
+					                    }
+
+								        .hover-text .hover-box::after {
+						                    content: "";
+						                    position: absolute;
+						                    top: 100%; /* Arrow pointing down */
+						                    left: 50%;
+						                    transform: translateX(-50%);
+						                    border-width: 5px;
+						                    border-style: solid;
+						                    border-color: #E89980 transparent transparent transparent;
+						                }
+
+								        .hover-text:hover .hover-box {
+								            visibility: visible;
+								            opacity: 1;
+								        }
+								    </style>
+								</head>
+								<body>
+								    <p>In order to make this map, I chose an area in the southern region of the Netherlands where the river looked "wild". This turned out to be the Maas river, running through Roermond, De Weerd, Osen, Ool, and Maasbracht. I downloaded the 
+								    	<span class="hover-text">DTM
+								        <span class="hover-box"> A <strong> Digital Terrain Model </strong> is a model that contains a stripped visualisation of the terrain - stripped of the buildings, trees, etc.</span>
+								    </span> of my chosen area using <a href="https://geotiles.citg.tudelft.nl/" target="_blank"> the GeoTiles website</a> which sources open data (like LiDAR point clouds). Afterwards, I used <a href="https://dancoecarto.com/creating-rems-in-qgis-the-cross-section-method " target="_blank"> this tutorial</a> to compute raster calculations - using <span class="hover-text">TIN 
+								    	<span class="hover-box"> <strong> Triangulated Irregular Network</strong> - an interpolation method that uses that Delaunay triangulation that creates a surface formed by triangles of nearest neighbour points. </span>
+								    </span> to interpolate the relative elevation of the area around the river based on cross-sections that I made along the river banks. I set the river to have an elevation of 0 and all of the other points of elevation of the terrain around the river are calculated in relation to this value. 
+								    <br>
+								    <br>
+								    Focusing on the stylistic/artistic side of creating this map: I chose the colour scheme of inverted blues and a stretch of 0-15 because it highlights all the complexities of the different elevated points throughout my area of interest. I noticed that when the stretch was smaller, the values became somewhat aggregated and the higher elevated land was all really white, indicating that it was all the highest possible elevated land from the river. However, this turned out not to be the case when I increased the stretch. As such, from this colour scheme and stretch, you can clealy see that this map appropriately conveys that the Netherlands is quite flat because majority of it is either dark blue or closer to a dark blue. 
+								</p>
+							<div class="slideshow-container">
+
+							  <!-- Full-width images with number and caption text -->
+							  <div class="mySlides fade">
+							    <div class="numbertext">1 / 5</div>
+							    <img src="images/rem2.png" style="width:100%">
+							    <div class="text">Stretch: 0-15 | Colour scheme: BrBG</div>
+							  </div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">2 / 5</div>
+							    <img src="images/rem3.png" style="width:100%">
+							    <div class="text">Stretch: 0-15 | Colour scheme: inverted blues</div>
+							  </div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">3 / 5</div>
+							    <img src="images/rem4.png" style="width:100%">
+							    <div class="text">Stretch: 0-5 | Colour scheme: inverted blues</div>
+							  </div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">4 / 5</div>
+							    <img src="images/rem5.png" style="width:100%">
+							    <div class="text">Stretch: 0-15 | Colour scheme: inverted blues. This screenshot has all of the layers on it (so the original merged raster layers, the merged raster layer acting as the shadow, the tin layer, and the final REM layer)</div>
+							  </div>
+
+							  <div class="mySlides fade">
+							    <div class="numbertext">5 / 5</div>
+							    <img src="images/rem6.png" style="width:100%">
+							    <div class="text">Stretch: 0-5 | Colour scheme: spectral. This screenshot has the REM layer and the merged raster layer with the shadow. I think that having multiple colours on the map is slightly confusing, even with an accompanying legend, because the change in elevation is not as accurately or helpfully represented in the gradual change in colour. This is partly why I liked using the blues colour scheme because then you can clearly see where the elevation is at its lowest (the river) and then where it is at its highest</div>
+							  </div>
+
+							  <!-- Next and previous buttons -->
+							  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+							</div>
+							<br>
+
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+							  <span class="dot" onclick="currentSlide(1)"></span>
+							  <span class="dot" onclick="currentSlide(2)"></span>
+							  <span class="dot" onclick="currentSlide(3)"></span>
+							  <span class="dot" onclick="currentSlide(4)"></span>
+							  <span class="dot" onclick="currentSlide(5)"></span>
+							</div>
 							</div>
 							<div class="row-6 row-12-mobilep">
-								<h3>Obstacles encounters and skills I learnt as a result:</h3>
+								<h3>Obstacles encountered and skills I learnt as a result:</h3>
 								<ul>
-									<li><strong>Choosing data: </strong>when I was choosing the data for my choropleth map, I had trouble often finding a complete data set. When I looked at the UN Stat Data online, some countries did not submit their data for certain indicators and when they did, it was usually for the year 2019 and no earlier or later. This made it quite difficult to create a choropleth map because then you could not see values for any country and they could be falsely read as 0 for a value when in fact it was just missing. I overcame this by learning how to go into the attribute tables and reading/understanding the data and cleaning it up.</li>
-									<li><strong>Data joining: </strong>joining the data layers was difficult because some information was missing and I needed to join the right target and join fields in order for the data layers to appropriately join. After trial and error, I learnt how to join the right fields (in the end it was the ISO_A3 fields). </li>
-									<li><strong>Uploading maps to Esri-Online </strong> I learnt how to export the layer as a feature layer which I then uploaded onto Esri online.</li>
-									<li><strong>Making a web app:</strong> I learnt how to make a slider map using the web app function in Esri Online. It was challenging at first because I thought the slider map would allow me to slide between the two maps (as in, have it trail and overlay each other). But after finding out that was not what I planned to do, I experimented with other web apps until I found "Media Map".</li>
+									<li><strong>Running TIN:</strong> Not only have I learnt how to make cross-sections, I have also learnt how to use those cross-sections to run a TIN analysis in ArcGIS. Whilst the TIN analysis ran very well, I wished that I had edited the map's outline a bit more as it looks a bit odd.</li>
+									<li><strong>Raster calculations:</strong> I have gained a stronger understanding in the different raster calculations available to the downloaded raw data.</li>
+									<li><strong>Art of cartography:</strong> This assignment emphasised learning the art of cartography and specifically, how to focus on making stylistic choices in order to appropriately create aesthetically pleasing maps.</li>
 								</ul>
 
 							</div>
@@ -94,6 +192,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+
+				// Next/previous controls
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				// Thumbnail image controls
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  let i;
+				  let slides = document.getElementsByClassName("mySlides");
+				  let dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+				    slides[i].style.display = "none";
+				  }
+				  for (i = 0; i < dots.length; i++) {
+				    dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";
+				  dots[slideIndex-1].className += " active";
+				}
+			</script>
 
 	</body>
 </html>

@@ -55,19 +55,32 @@
 				                iFrames are not supported on this page.
 				            </iframe>
 				        </a>
-						<h3>What is LiDAR?</h3>
-						<p>text </p>
+						<h3>What will this map tell us? What is CSPI (carbon sequestration index)</h3>
+						<p>This map will tell us about the ACD (aboveground carbon density) and GPP (gross primary production) of the island of Bali. Inside the Google Earth Engine editor <!-- maybe add a pop-up thingy? -->, however, one can calculate the mean GPP, ACD, FC, and mean CSPI of the island. 
+						<div class="row-6 row-12-mobilep">
+							<u1>
+								<li><strong>GPP (Global Primary Production):</strong> Amount of carbon captured through photosynthesis of all producers in a defined region - measured in tonnes of Carbon/hectare/year. This is useful for mapping carbon as photosynthesis is part of the carbon cycle. This step shows how much carbon is being taken from the atmosphere and being used up by producers. </li>
+								<li><strong>ACD (Aboveground Carbon Density):</strong> Amount of carbon that is stored in living vegetation on Earth’s surface - measured in tonnes/hectare. This is an approximation measured by recording the area of a plant that is above ground (e.g. from trunk base to highest branch). The ratio between ACD and GPP gives us total carbon sequestration by producers.</li>
+								<li><strong>FC (Forest Cover):</strong> A measure of how much land is available for carbon sequestration in a defined area based on land usage - measured in <!-- find the units for this --> This is relevant for land use planning (how spaces can be used and/or changed based on carbon sequestration needs).</li>
+								<li><strong>CSPI (Carbon Sequestration Potential Index):</strong> An indicator that determines carbon sequestration potential. All three other variables are taken into account to determine this final indicator. This is also useful for land use planning and management.</li>
+							</u1>
+						</div>
+						</p>
 						<div class="row">
 							<div class="row-6 row-12-mobilep">
 								
 								<h3>How did I make this map?</h3>
-								<p>This Google Earth Engine app was made by a former UCU student, Bonifacius Tirto Dwilaksono. With his instructions, I was able to replace his own data on __ and _ with data I found online of the island of Bali. </p>
+								<p>This Google Earth Engine app was made by a former UCU student, Bonifacius Tirto Dwilaksono. With his instructions, I was able to replace his own data on the region of interest (ROI) and the ESA biomass dataset with data I found online of the island of Bali. I used <a href="https://geojson.io/#map=9.46/12.5991/-70.0197" target="_blank">this web tool</a> to download my ROI as a <span class="hover-text">shapefile (.shp).
+									<span class="hover-box"> A <strong> shapefile </strong> is a file format that stores geometric location and information based on geographic features.</span> </span>
+								Then, I used <a href="https://data.ceda.ac.uk/neodc/esacci/biomass/data/agb/maps/v4.0/geotiff/2020" target="_blank">this website</a> to download the ABG ("above-ground") <span class="hover-text"> ESA
+									<span class="hover-box">Environmental Space Agency Climage Change Initative</span> </span>
+								dataset (in the form of a GeoTiff file) according to the latitude and longitude coordinates of the island. Afterwards, these were loaded onto the assets in the Google Engine Editor and replaced "Heuvelrug" (Bonifacius' ROI) with our own as well as changing the directory for the dataset the code was calling on to calculate the ACD, GPP, FC, and CSPI.</p>
 							</div>
 							<div class="row-6 row-12-mobilep">
-								<h3>Obstacles encounters and skills I learnt as a result:</h3>
+								<h3>Obstacles encountered and skills I learnt as a result:</h3>
 								<ul>
-									<li><strong>Extracting the data: </strong>I had a lot of trouble with figuring out how to download my data in a Shapefile. I originally tried using a Google Earth Engine editor from the assignment manual but when that did not work I used another website to download my data as a shapefile.</li>
-									<li><strong>Using Google Earth Engine: </strong>it was really frustrating at first not knowing why my data was not calculating in the commands tab of the engine. Then, I realised that whenever the app was calling on a certain class, I had not changed it with my own file yet and it was still calling on Bonifacius'. After I realised that, the app worked and after having looked through the engine myself (and his lecture), I have gained a stronger understanding on how to use GEE to code.</li>
+									<li><strong>Coding in Google Earth Engine: </strong>I had a lot of trouble with figuring out how to download my data in a Shapefile. I originally tried using a Google Earth Engine editor from the assignment manual but when that did not work I used another website to download my data as a shapefile.</li>
+									<li><strong>Using Google Earth Engine: </strong>not knowing why my data was not calculating in the commands tab of the engine was really frustrating at first. Then, I realised that whenever the app was calling on a certain class, I had not changed it with my own file yet as it was still calling on Bonifacius'. After I realised that, the app worked and after having looked through the engine myself (and his lecture), I have gained a stronger understanding on how to use GEE to code.</li>
 								</ul>
 
 							</div>
@@ -96,6 +109,49 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- Style -->
+		    <style>
+		        .hover-text {
+		            position: relative;
+		            display: inline-block;
+		            cursor: pointer;
+		            color: #E89980
+		        }
+
+		        .hover-text .hover-box {
+		            visibility: hidden;
+                    width: 445px;
+                    background-color: #E89980;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 5px;
+                    padding: 10px;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%; /* Position the box above the text */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+
+		        .hover-text .hover-box::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%; /* Arrow pointing down */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #E89980 transparent transparent transparent;
+                }
+
+		        .hover-text:hover .hover-box {
+		            visibility: visible;
+		            opacity: 1;
+		        }
+		    </style>
 
 	</body>
 </html>
