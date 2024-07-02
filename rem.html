@@ -98,17 +98,18 @@
 								            opacity: 1;
 								        }
 								    </style>
-								</head>
+								</head> 
 								<body>
 								    <p>In order to make this map, I chose an area in the southern region of the Netherlands where the river looked "wild". This turned out to be the Maas river, running through Roermond, De Weerd, Osen, Ool, and Maasbracht. I downloaded the 
 								    	<span class="hover-text">DTM
 								        <span class="hover-box"> A <strong> Digital Terrain Model </strong> is a model that contains a stripped visualisation of the terrain - stripped of the buildings, trees, etc.</span>
-								    </span> of my chosen area using <a href="https://geotiles.citg.tudelft.nl/" target="_blank"> the GeoTiles website</a> which sources open data (like LiDAR point clouds). Afterwards, I used <a href="https://dancoecarto.com/creating-rems-in-qgis-the-cross-section-method " target="_blank"> this tutorial</a> to compute raster calculations - using <span class="hover-text">TIN 
+								   	 	</span> 
+								   	 of my chosen area using <a href="https://geotiles.citg.tudelft.nl/" target="_blank"> the GeoTiles website</a> which sources open data (like LiDAR point clouds). Afterwards, I used <a href="https://dancoecarto.com/creating-rems-in-qgis-the-cross-section-method " target="_blank"> this tutorial</a> to compute raster calculations - using <span class="hover-text">TIN 
 								    	<span class="hover-box"> <strong> Triangulated Irregular Network</strong> - an interpolation method that uses that Delaunay triangulation that creates a surface formed by triangles of nearest neighbour points. </span>
 								    </span> to interpolate the relative elevation of the area around the river based on cross-sections that I made along the river banks. I set the river to have an elevation of 0 and all of the other points of elevation of the terrain around the river are calculated in relation to this value. 
 								    <br>
 								    <br>
-								    Focusing on the stylistic/artistic side of creating this map: I chose the colour scheme of inverted blues and a stretch of 0-15 because it highlights all the complexities of the different elevated points throughout my area of interest. I noticed that when the stretch was smaller, the values became somewhat aggregated and the higher elevated land was all really white, indicating that it was all the highest possible elevated land from the river. However, this turned out not to be the case when I increased the stretch. As such, from this colour scheme and stretch, you can clealy see that this map appropriately conveys that the Netherlands is quite flat because majority of it is either dark blue or closer to a dark blue. 
+								    Focusing on the stylistic/artistic side of creating this map: I chose the colour scheme of inverted blues and a stretch of 0-15 because it highlights all the complexities of the different elevated points throughout my area of interest. I noticed that when the stretch was smaller, the values became somewhat aggregated and the higher elevated land was all really white, indicating that it was all the highest possible elevated land from the river. However, this turned out not to be the case when I increased the stretch. As such, from this colour scheme and stretch, you can clearly see that this map appropriately conveys that the Netherlands is quite flat because the majority of it is either dark blue or closer to a dark blue. 
 								</p>
 							<div class="slideshow-container">
 

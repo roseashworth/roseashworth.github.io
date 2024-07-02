@@ -55,10 +55,11 @@
 						<p>I grew up in Bandung, Indonesia but my parents are English and Indonesian.</p>
 						<h3>Where do I study?</h3>
 						<p>I studied the International Baccalaureate programme at an international school in Indonesia. I am currently studying a Liberal Arts and Sciences Programme at University College Utrecht. My tracks are Chemistry, Earth & Environment, and Molecular Cell Biology. </p> 
+						<h3>What are some of my hobbies?</h3>
+						<p>I enjoy all aspects of music (listening to it, playing it, and writing it). I also like reading books - particularly historical fiction. I love being active - I like cycling, going on runs, going to the gym, and playing football on the university team. Recently, I have grown to enjoy exploring nature by going on long walks through the forests and parks. </p> 
 						<h3>Where else can you find me?</h3>
-						<p>My personal email is <a href="mailto:roseann.ashworth@gmail.com">roseann.ashworth@gmail.com</a> and my school email is <a href="mailto:r.a.ashworth@students.uu.nl">r.a.ashworth@students.uu.nl</a> Feel free to reach out if you have any questions!</p>
-						</div>
-						</div></p>
+						<p>My personal email is <a href="mailto:roseann.ashworth@gmail.com">roseann.ashworth@gmail.com</a> and my school email is <a href="mailto:r.a.ashworth@students.uu.nl">r.a.ashworth@students.uu.nl</a>. Feel free to reach out if you have any questions!</p>
+						
 					</div>
 				</section>
 
@@ -83,6 +84,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+
+				// Next/previous controls
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				// Thumbnail image controls
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  let i;
+				  let slides = document.getElementsByClassName("mySlides");
+				  let dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+				    slides[i].style.display = "none";
+				  }
+				  for (i = 0; i < dots.length; i++) {
+				    dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";
+				  dots[slideIndex-1].className += " active";
+				}
+			</script>
 
 	</body>
 </html>

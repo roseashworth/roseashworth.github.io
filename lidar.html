@@ -52,18 +52,32 @@
 					<div class="box">
 						<span class="image fit"><img src="images/lidar.jpg" alt="" /></span>
 						<h3>What is LiDAR?</h3>
-						<p>text </p>
+						<p>LiDAR (Light Detection and Ranging) is a remote sensing method which uses active sensors that emits a pulse of light and uses the return time of the reflected light to determine the location of an object. From a series of LiDAR points, images can be generated to map out an area of interest. LiDAR points can be obtained through the use of various objects: drones, helicopters, and cars (think of the Google Maps car!). </p>
 						<div class="row">
 							<div class="row-6 row-12-mobilep">
 								
 								<h3>How did I make this map?</h3>
-								<p>This Google Earth Engine app was made by a former UCU student, Bonifacius Tirto Dwilaksono. With his instructions, I was able to replace his own data on __ and _ with data I found online of the island of Bali. </p>
+								<p>Data was obtained from the <a href="https://geotiles.citg.tudelft.nl/" target="_blank"> the GeoTiles website</a>. This data included, 
+										<span class="hover-text">DSM
+								        <span class="hover-box"> A <strong> Digital Surface Model </strong> is a model that captures everything on the surface (both natural, like trees, and man-made, like buildings).</span>
+								   	 	</span>
+								   	 	, 
+								   	 	<span class="hover-text">DTM
+								        <span class="hover-box"> A <strong> Digital Terrain Model </strong> is a model that contains a stripped visualisation of the terrain - stripped of the buildings, trees, etc.</span>
+								   	 	</span>
+								   	 	, and
+								   	 	<span class="hover-text">LAZ
+								        <span class="hover-box"> A <strong> LAZ </strong> file stores the LiDAR data in a compressed file.</span>
+								   	 	</span>.
+								   	 	I downloaded the smallest LAZ file possible because, otherwise, it would have been too large for my laptop to handle. This also made the data conversion step from LAZ to LAS file easier. I then converted the 2D scene to a local scene (which projects a 3D image) and changed the symbology to highlight the elevation in Lombok, Utrecht. I changed the colour scheme to "magma" wherein the lighter the colour, the higher the elevation. I also created a multidirectional hillshade layer by using a Raster Function in the Analysis tab and setting the transparency to 50%. 
+							</p>
 							</div>
 							<div class="row-6 row-12-mobilep">
 								<h3>Obstacles encountered and skills I learnt as a result:</h3>
 								<ul>
-									<li><strong>Overlaying the Hillshade layer onto the DSM: </strong>. . . . </li>
-									<li><strong>Creating a WebScene: </strong>. . . . . </li>
+									<li><strong>Overlaying the Hillshade layer onto the DSM: </strong>I learnt how to create a hillshade layer using the Raster Functions tab and overlay it onto the DSM.</li>
+									<li><strong>Creating a WebScene: </strong>Although I did learn how to do this on the Esri training programme on <a href="https://www.esri.com/training/catalog/58471aa5fb83aeb761847d7f/sharing-3d-content-using-scene-layer-packages/" target="_blank">Sharing 3D Content Using Scene Layer Packages</a>, the webscene did not upload or work properly and so when I tried the same settings with this local scene, it did not work either.
+									</li>
 								</ul>
 
 							</div>
@@ -92,6 +106,49 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- style for the hover box-->
+		<style>
+	        .hover-text {
+	            position: relative;
+	            display: inline-block;
+	            cursor: pointer;
+	            color: #E89980
+	        }
+
+	        .hover-text .hover-box {
+	            visibility: hidden;
+                width: 445px;
+                background-color: #E89980;
+                color: #fff;
+                text-align: center;
+                border-radius: 5px;
+                padding: 10px;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%; /* Position the box above the text */
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+	        .hover-text .hover-box::after {
+                content: "";
+                position: absolute;
+                top: 100%; /* Arrow pointing down */
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 5px;
+                border-style: solid;
+                border-color: #E89980 transparent transparent transparent;
+            }
+
+	        .hover-text:hover .hover-box {
+	            visibility: visible;
+	            opacity: 1;
+	        }
+	    </style>
 
 	</body>
 </html>
